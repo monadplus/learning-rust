@@ -74,8 +74,8 @@ fn main() {
     //  - FnOnce: consumes the variables it captures from its enclosing scope, known as the closure’s environment. To consume the captured variables, the closure must take ownership of these variables and move them into the closure when it is defined. The Once part of the name represents the fact that the closure can’t take ownership of the same variables more than once, so it can be called only once.
     //  - FnMut: can change the environment because it mutably borrows values.
     //  - Fn: borrows values from the environment immutably.
-    //
-    //  When you create a closure, Rust infers which trait to use based on how the closure uses the values from the environment.
+
+    //  **When you create a closure, Rust infers which trait to use based on how the closure uses the values from the environment.**
 
     let x = 4;
     let equal_to_x = |z| z == x; // with fn this doesn't work.
