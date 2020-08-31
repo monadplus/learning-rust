@@ -1,5 +1,7 @@
 mod lib;
-use lib::*;
+mod lib2;
+mod lib3;
+// use lib::*;
 
 // Box<T>
 
@@ -26,7 +28,7 @@ fn main() {
     // The third case is known as a trait object, and Chapter 17 devotes an entire section, “Using Trait Objects That Allow for Values of Different Types,” just to that topic
 
     let b = Box::new(5); // Box<i32>, allocated on the heap.
-    print!("b = {}", b);
+    println!("b = {}", b);
 
     // Just like any owned value, when a box goes out of scope, as b does at the end of main, it will be deallocated. The deallocation happens for the box (stored on the stack) and the data it points to (stored on the heap).
     //
@@ -43,4 +45,10 @@ fn main() {
     let list = Cons(1, Box::new(Cons(2, Box::new(Nil))));
 
     lib::deref_trait();
+    lib::drop_trait();
+    lib::rc();
+    println!("");
+    lib2::ref_cell();
+    println!("");
+    lib3::leak_memory();
 }
