@@ -121,9 +121,9 @@ mod tests {
             // https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html#method.borrow_mut
             self.sent_messages.borrow_mut().push(String::from(message));
 
+            // This would produce a run-time error
             //let mut one_borrow = self.sent_messages.borrow_mut();
             //let mut two_borrow = self.sent_messages.borrow_mut();
-
             //one_borrow.push(String::from(message));
             //two_borrow.push(String::from(message));
         }

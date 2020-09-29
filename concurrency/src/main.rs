@@ -35,5 +35,7 @@ fn main() {
     handle.join().unwrap();
 
     // **** Using Message Passing to Transfer Data Between Threads ****
-    lib::message_passing()
+    // lib::message_passing();
+    lib::mutex();
+    lib::sync()
 }
